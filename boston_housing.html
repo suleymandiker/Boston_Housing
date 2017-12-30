@@ -11802,7 +11802,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11876,7 +11876,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
@@ -11989,7 +11989,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;r2_score&#39;</span>
@@ -12051,7 +12051,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate the performance of this model</span>
@@ -12130,7 +12130,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;train_test_split&#39;</span>
@@ -13276,7 +13276,13 @@ Think about the pros and cons of adding more training points based on if the tra
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> I choose  max-depth of 3. Because around 300 cycles the test and training scores are balanced and the test scores change slightly in the next cycles and are very consistent with the training score.</p>
+<p><strong>Answer: </strong> I choose  max-depth of 3. Because around 300 cycles the test and training scores are balanced and the test scores change slightly in the next cycles and are very consistent with the training score. 
+-What happens to the score of the training curve as more training points are added?
+The training score decreases when more training points are added but remains constant after 300 cycles.</p>
+<p>-What about the testing curve?</p>
+<p>The test score increases when more training points are added, but remains constant after 300 cycles.</p>
+<p>-Would having more training points benefit the model?Thus if we were to receive even more training data points, such as a total of 500, would this be beneficial or not? Why or why not?</p>
+<p>Modeling after 300 cycles does not seem to provide any benefit.Because after 300 cycles both the test score and the training score are progressing unchanged.</p>
 
 </div>
 </div>
@@ -13779,7 +13785,7 @@ kKGkJyIiIUNJT0REQoaSnoiIhAwlPRERCRlKeiIiEjL+H/ag4cwI9MpiAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> I'm indecisive between 3 and 4, but I choose 4. Because 3 can create overfitting in the model for training and validation values are too close.For this reason it is best to include the invisible data max_depth = 4</p>
+<p><strong>Answer: </strong> I'm indecisive between 3 and 4, but I choose 4. Because validation score is highest 4 and 5 looks.why not 5? Because according to 4 the difference between the verification score and the training score at 5 is more, ie overfitting is more. I choose 4 because the overfitting between 3 and 4 is less but the validation score of 4 is higher.</p>
 
 </div>
 </div>
@@ -13811,7 +13817,7 @@ kKGkJyIiIUNJT0REQoaSnoiIhAwlPRERCRlKeiIiEjL+H/ag4cwI9MpiAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Which model performs best is a way of finding the best model by applying different parameter combinations.For example, in the Boston housing dataset, the optimal depth in the grid search technique can be used between 1 and 10 decision-making stages</p>
+<p><strong>Answer: </strong> Grid Search is a hyperparameter optimization technique. There are two types of parameters: model parameter and model hyperparameter.Parameters that can not be learned with the normal education process are called hyperparameter. we try to fix this hyperparameter before the training process and try to choose the most appropriate parameter according to the results.Grid search in basic sense, is a brute force method to estimate hyperparameters. As hyper parameters we have α, β parameters. Pick a bunch of values of αα -- (α1,α2,…)(α1,α2,…), pick a bunch of values of ββ -- (β1,β2,…)(β1,β2,…) and for each pair of values, evaluate the validation error function. Then pick the pair that gives the minimum value of the validation error function.This is how we call grid search. The other hyperparameter estimation is random search. GridSearchCV: Grid-search is used with cross-validated.</p>
 
 </div>
 </div>
@@ -13837,6 +13843,8 @@ kKGkJyIiIUNJT0REQoaSnoiIhAwlPRERCRlKeiIiEjL+H/ag4cwI9MpiAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> k-fold cross validation: The model is trained on these scores by dividing the data for training into equal parts k to the lower parts and producing a separate score for each part. It is very useful in grid search. Because this technique is of great benefit in finding optimal parameters to provide underfitting and overfitting balance</p>
+<p>The data set is divided equally into K folds.Each fold runs once as a test set.Works as training set k-1 times. Average test performance is used to estimate the data outside the working data. Breaking it down to K fold times gives a safer result for real guess and  reduces the likelihood of high variance.</p>
+<p>If the grid search is done without k-fold cross-validation, the probability of high variance will increase.If you were working on only one data segment, the estimate would be good for that data, but when different sets of data arrived, the estimate would be significantly lower.Cross validation is a serious contribution to grid search in this respect.</p>
 
 </div>
 </div>
@@ -13872,7 +13880,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -13939,7 +13947,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -14028,7 +14036,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
@@ -14093,7 +14101,7 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">vs</span><span class="o">.</span><span class="n">PredictTrials</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">fit_model</span><span class="p">,</span> <span class="n">client_data</span><span class="p">)</span>
@@ -14117,7 +14125,7 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 Trial 2: $419,700.00
 Trial 3: $415,800.00
 Trial 4: $420,622.22
-Trial 5: $418,377.27
+Trial 5: $413,334.78
 Trial 6: $411,931.58
 Trial 7: $399,663.16
 Trial 8: $407,232.00
