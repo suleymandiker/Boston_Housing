@@ -13842,7 +13842,9 @@ kKGkJyIiIUNJT0REQoaSnoiIhAwlPRERCRlKeiIiEjL+H/ag4cwI9MpiAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> k-fold cross validation: The model is trained on these scores by dividing the data for training into equal parts k to the lower parts and producing a separate score for each part. It is very useful in grid search. Because this technique is of great benefit in finding optimal parameters to provide underfitting and overfitting balance</p>
+<p><strong>Answer: </strong> 
+K-Fold Cross Validation is one of the methods of segmentation of the data set to evaluate the classification models and to train the model.The k-fold cross validation divides the data into equal parts according to a specified number of k, allowing each part to be used for both training and testing, thereby reducing deviation and error caused by distribution and fragmentation.Let's say we have 1000 records set and  we divide this data set into 5 equal parts, in this case k = 5. We run the algorithm five times on training and test sets. We collect the test result we get every round and divide it by five. The result is the model performance score.</p>
+<p>K-Fold Cross Validation is very useful in grid search. Because this technique is of great benefit in finding optimal parameters to provide underfitting and overfitting balance</p>
 <p>The data set is divided equally into K folds.Each fold runs once as a test set.Works as training set k-1 times. Average test performance is used to estimate the data outside the working data. Breaking it down to K fold times gives a safer result for real guess and  reduces the likelihood of high variance.</p>
 <p>If the grid search is done without k-fold cross-validation, the probability of high variance will increase.If you were working on only one data segment, the estimate would be good for that data, but when different sets of data arrived, the estimate would be significantly lower.Cross validation is a serious contribution to grid search in this respect.</p>
 
